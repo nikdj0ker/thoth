@@ -4,24 +4,30 @@ on: workflow_dispatch #Триггер, который будет вызыват�
 jobs: #Начало секции джобов
 
   print_hello: #Начало секции первой джобы
-    runs-on: self-hosted
-#    runs-on: ubuntu-latest #Среда выполнения джоба
+#    runs-on: self-hosted
+    runs-on: ubuntu-latest #Среда выполнения джоба
     steps: #Начало секции шагов
       - name: Print hello #Название шага
         run: echo "Hello world!" #Команда, которая будет выполнена в терминале
 
   print_full_technical_info: #Начало секции второй джобы
     needs: print_hello
-    runs-on: self-hosted
-#    runs-on: ubuntu-latest #Среда выполнения джоба
+#    runs-on: self-hosted
+    runs-on: ubuntu-latest #Среда выполнения джоба
     steps: #Начало секции шагов
       - name: Print full_tech_info #Название шага
         run: sudo lshw #Команда, которая будет выполнена в терминале
 
   print_short_technical_info: #Начало секции третий джобы
     needs: print_full_technical_info
-    runs-on: self-hosted
-#    runs-on: ubuntu-latest #Среда выполнения джоба
+#    runs-on: self-hosted
+    runs-on: ubuntu-latest #Среда выполнения джоба
     steps: #Начало секции шагов
       - name: Print short_tech_info #Название шага
         run: sudo lshw -short #Команда, которая будет выполнена в терминале
+
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout_repo
+        uses: actions/checkout@v3
