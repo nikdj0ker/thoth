@@ -27,7 +27,8 @@ jobs: #Начало секции джобов
         run: sudo lshw -short #Команда, которая будет выполнена в терминале
 
   checkout:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+#    runs-on: ubuntu-latest
     steps:
       - name: checkout_repo
         uses: actions/checkout@v3
