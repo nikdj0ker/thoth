@@ -1,5 +1,6 @@
 name: Print workflow #Название workflow
 on: workflow_dispatch #Триггер, который будет вызывать workflow
+#on: push
 
 jobs: #Начало секции джобов
 
@@ -31,4 +32,4 @@ jobs: #Начало секции джобов
 #    runs-on: ubuntu-latest
     steps:
       - name: checkout_repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
